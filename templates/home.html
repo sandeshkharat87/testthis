@@ -1,0 +1,41 @@
+{% import "bootstrap/wtf.html" as wtf %}
+<!-- {{ wtf.quick_form(form) }} -->
+
+
+
+<form method="POST" action="/">
+    {{ form.hidden_tag() }}
+    {{ form.csrf_token() }}
+
+    {{ wtf.quick_form(form) }}
+
+    <input type="Submit" name="">
+
+</form>
+
+
+{{ yo }}
+
+
+<div class="show">
+
+{% if data %}
+
+    {{ data }}
+
+{% else %}
+
+    NONE
+
+{% endif %}
+
+
+<h3>Errors</h3>
+{% if form.errors %}
+    {{ form.errors }}
+{% endif %}
+
+
+
+
+</div>
